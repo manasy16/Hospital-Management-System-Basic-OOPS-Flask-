@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hospital Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f8fb;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 85%;
+            max-width: 900px;
+            margin: 30px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #1e90ff;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 5px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        input {
+            width: 95%;
+            padding: 8px;
+            margin: 6px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background: #1e90ff;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            margin-top: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background: #0f6ecf;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background: #e0e0e0;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>🏥 Hospital Management System</h1>
+
+    <div class="section">
+        <h2>Add Patient</h2>
+        <form action="/add_patient" method="post">
+            <input name="patient_id" placeholder="Patient ID" required>
+            <input name="name" placeholder="Patient Name" required>
+            <input name="age" placeholder="Age" required>
+            <input name="gender" placeholder="Gender" required>
+            <input name="contact" placeholder="Contact" required>
+            <input name="disease" placeholder="Disease" required>
+            <button type="submit">Add Patient</button>
+        </form>
+    </div>
+
+    <hr>
+
+    <div class="section">
+        <h2>Add Doctor</h2>
+        <form action="/add_doctor" method="post">
+            <input name="doctor_id" placeholder="Doctor ID" required>
+            <input name="name" placeholder="Doctor Name" required>
+            <input name="specialization" placeholder="Specialization" required>
+            <input name="contact" placeholder="Contact" required>
+            <button type="submit">Add Doctor</button>
+        </form>
+    </div>
+
+    <hr>
+
+    <div class="section">
+        <h2>Book Appointment</h2>
+        <form action="/book_appointment" method="post">
+            <input name="appointment_id" placeholder="Appointment ID" required>
+            <input name="patient_id" placeholder="Patient ID" required>
+            <input name="doctor_id" placeholder="Doctor ID" required>
+            <input name="date" placeholder="Date (YYYY-MM-DD)" required>
+            <input name="time" placeholder="Time (e.g. 10:30 AM)" required>
+            <button type="submit">Book Appointment</button>
+        </form>
+    </div>
+
+    <hr>
+
+    <div class="section">
+        <h2>Generate Bill</h2>
+        <form action="/generate_bill" method="post">
+            <input name="bill_id" placeholder="Bill ID" required>
+            <input name="appointment_id" placeholder="Appointment ID" required>
+            <input name="consultation_fee" placeholder="Consultation Fee" required>
+            <input name="medicine_cost" placeholder="Medicine Cost" required>
+            <button type="submit">Generate Bill</button>
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>
